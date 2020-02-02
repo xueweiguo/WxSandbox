@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view>
+    <button class="navi_button" type="primary" bindtap="navigateToCampass" hover-class="other-button-hover"> 指南针 </button>
+    <button class="navi_button" type="primary" bindtap="navigateToLogs" hover-class="other-button-hover"> 实时数据表示 </button>
+  </view>
+</view>
